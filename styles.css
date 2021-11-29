@@ -16,15 +16,21 @@ body{
     margin-right: auto;
 }
 p{
-    font-size: 21px;
+    font-size: 20px;
     /* font-family: fantasy; */
     /* font-family: monospace; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #6E7b81;
     line-height: 35px;
 }
+h1{
+    font-size: 30px;
+    font-family: monospace;
+}
 .demo{
     margin: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
     width: min-content;
 }
 
