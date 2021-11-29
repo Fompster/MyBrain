@@ -2,12 +2,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>My Brain</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-<h1>This is my kool site</h1>
-<p>:D</p>
-
+<script>
+    var context;
+  function init()
+  {
+    context= myCanvas.getContext('2d');
+    context.beginPath();
+    context.fillStyle="#00ffff";
+    // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+    context.arc(100,100,20,0,Math.PI*2,true); context.closePath();
+    context.fill();
+  }
+</script>
+<body onLoad="init();">
+    <h1>This is my kool site</h1>
+    <p>:D</p>
+    <canvas id="myCanvas" width="500" height="400">
+    </canvas>
 </body>
 </html> 
