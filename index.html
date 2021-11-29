@@ -1,4 +1,3 @@
-<!-- command - shift - v to preview -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,22 +5,52 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<script>
-    var context;
-  function init()
-  {
-    context= myCanvas.getContext('2d');
-    context.beginPath();
-    context.fillStyle="#00ffff";
-    // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-    context.arc(100,100,20,0,Math.PI*2,true); context.closePath();
-    context.fill();
-  }
-</script>
-<body onLoad="init();">
-    <h1>This is my kool site</h1>
-    <p>:D</p>
-    <canvas id="myCanvas" width="500" height="400">
-    </canvas>
+<body>
+    <h1>Getting Started</h1>
+    <p>I am learning on how to use Javascript properly. I will start off with something that I have wanted to do for a very long time now. Bouncing balls!</p>
+    
+    <div class="demo">
+        <script>
+            var ball;
+            var x, y, maxX, maxY;
+            var dx = 2;
+            var dy = 2;
+            
+
+          function init() {
+            ball= bounceBalls.getContext('2d');
+            maxX = bounceBalls.width;
+            maxY = bounceBalls.height;
+            x = maxX / 2;
+            y = maxY / 2;
+            setInterval(draw,10);
+          }
+          function draw() {
+            ball.clearRect(0,0, 600,400);
+            x += dx;
+            y += dy;
+
+            // Boundary Logic
+            if( x<0 || x>maxX) dx=-dx; 
+            if( y<0 || y>maxY) dy=-dy; 
+            x +=dx; 
+            y +=dy;
+
+            ball.strokeStyle="#000000";
+            ball.lineWidth = 3;
+            ball.beginPath();
+            ball.arc(x, y, 20, 0, Math.PI*2, false); 
+            ball.closePath();
+            ball.stroke();
+          }
+        </script>
+
+        <canvas id="bounceBalls" width="600" height="400">
+        </canvas>
+        <button type="button"
+            onclick="init();">
+            Click to start the demo
+        </button>
+    </div>
 </body>
 </html> 

@@ -1,7 +1,37 @@
-body{
-    background: white;
-    margin: 0;
+html{
+    background: rgb(232, 236, 236);
+    height:100%;
 }
-h1{
-    color: violet;
+body{
+    position: absolute;
+    left:0;
+    right:0;
+    background: white;
+    width: 70%;
+    min-height:100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+p{
+    font-size: 21px;
+    /* font-family: fantasy; */
+    /* font-family: monospace; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #6E7b81;
+    line-height: 35px;
+}
+.demo{
+    margin: auto;
+    width: min-content;
+}
+
+Canvas {
+     background-color: #ffffff;
+    border: 10px solid rgb(149, 98, 165);
+    border-radius: 20px;
+    box-shadow:2px 2px 8px rgb(90, 90, 90);
+    margin: auto; 
 }
