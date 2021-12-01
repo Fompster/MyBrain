@@ -7,11 +7,11 @@ html, body{
 .header {
     height: 100vh;
     position: relative;
-    /* background: #1abc9c; */
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 120px;
     color: white;
+    padding: auto;
     /* padding: 10px; */
 }
 
@@ -66,7 +66,6 @@ h1{
 h5 {
     position: absolute;
     z-index: 2;
-    margin: auto;
 }
 
 .canvas-small {
