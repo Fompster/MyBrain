@@ -3,6 +3,11 @@
 <head>
 <title>My Brain</title>
 <link rel="stylesheet" href="../styles.css">
+<!-- async downloads and exicutes script as soon as it can -->
+<!-- defer lads the page first and then executes -->
+<script src="../Scripts/expandCanvas.js" defer></script>
+<script src="../Scripts/simpleBallBounce.js" defer></script>
+<script src="../Scripts/sparks.js" async></script>
 </head>
 
 <body> 
@@ -18,18 +23,17 @@
              a very long time now. Bouncing balls!
         </p>
         
-        <div class="demo">
-            <script src="../Scripts/simpleBallBounce.js"></script>
+        <div class="demo" onload="bounceBall(canvas1);">
             <canvas class="canvas-small" id="canvas1" width="600" height="400"></canvas>
             <button type="button"
-                onclick="init(canvas1);">
+                onclick="bounceBall(canvas1);">
                 Click to start the demo
             </button>
         </div>
         <p>This was relitively easy to implement, the trail which I have added to the end of the ball gave me an idea. These circles can make for some 
-            really good particle effects.</p>     
+            really fun particle effects.</p>     
     </div>
-    <div class="dark-section">
+    <div class="dark-section" onload="sparks(canvas2);">
         <canvas class="expanded-canvas" id="canvas2"></canvas>
     </div>
 
@@ -38,36 +42,11 @@
             <canvas class="canvas-small" id="canvas3" width="600" height="400"></canvas>
         </div>
     </div>
-
-    <script src="../Scripts/expandCanvas.js"></script>
-    <!-- <script>
-        let canvas = document.getElementById("canvas2");
-        let context = canvas.getContext('2d');
-        const radius = 15;
-        var x = canvas.width / 2;
-        var y = canvas.height / 2;
-
-        canvas.onmousemove = function mouseCoords(event){
-            x = event.clientX;
-            y = event.clientY;
-            draw();
-        };
-        function draw() {
-            // glow
-            context.filter = 'blur(4px)';
-            context.beginPath();
-            context.arc(x, y, radius, 0, 2 * Math.PI, true);
-            context.fillStyle = "rgba(255, 255, 0, 0.8)" ;
-            context.fill();
-            context.closePath();
-            
-            // light
-            context.beginPath();
-            context.arc(x, y, radius - 4, 0, 2 * Math.PI, true);
-            context.fillStyle = "#ffffff" ;
-            context.fill();
-            context.closePath();
-        }
-    </script> -->
+    <script defer>
+        window.addEventListener('load', (event) => {
+            bounceBall(canvas0);
+            sparks(canvas2);
+        });
+    </script>
 </body>
 </html> 
