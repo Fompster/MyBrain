@@ -1,16 +1,17 @@
 // Used in the first project page
 
 function sparks(canvas){
-  // let canvas = document.getElementById("canvas2");
-  var x = canvas.width / 2;
-  var y = canvas.height / 2;
+  const radius = 15;
+  var maxX = canvas.width;
+  var maxY = canvas.height;
+  var x = maxX / 2;
+  var y = maxY / 2;
+  let context = canvas.getContext('2d');
 
   canvas.onmousemove = function mouseCoords(event){
     var canvasPosition = getPosition(canvas);
     x = event.clientX - canvasPosition.x;
     y = event.clientY - canvasPosition.y;
-
-    draw(canvas, x, y);
   };
 
   // Get a div's exact position on the page
@@ -41,10 +42,9 @@ function sparks(canvas){
       };
     }
 
-  function draw(canvas, x, y) {
-      let context = canvas.getContext('2d');
-      const radius = 15;
-
+  function draw() {
+      context.clearRect(0,0, maxX, maxY);
+      
       // glow
       context.filter = 'blur(4px)';
       context.beginPath();
@@ -60,4 +60,5 @@ function sparks(canvas){
       context.fill();
       context.closePath();
   }
+  setInterval(draw, 10);
 }
