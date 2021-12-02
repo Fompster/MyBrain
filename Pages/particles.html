@@ -30,8 +30,15 @@
                 Click to start the demo
             </button>
         </div>
-        <p>This was relitively easy to implement, the trail which I have added to the end of the ball gave me an idea. These circles can make for some 
-            really fun particle effects.</p>     
+        <p>This was relitively easy to implement. Like many things there were multiple ways to make this trail. The way it's implemented now is that I save the 
+            previous positions of the ball and draw them for each frame using a ratio to mentain the size and opacity. A different way is to clear the canvas 
+            inbetween each frame with an opaque rectangle which is the same color as the background. The latter seems much better than the one I implemented, 
+            especially for a demo with more than one ball. My reasoning for keeping it the way it is, is that I would like there to be a dark version for this 
+            site at some point so I will have to define some background color that may change.
+        </p>     
+        <p>
+            The trail which I have added to the end of the ball gave me an idea. These circles can make for some really fun particle effects.
+        </p>
     </div>
     <div class="dark-section" onload="sparks(canvas2);">
         <canvas class="expanded-canvas" id="canvas2"></canvas>
