@@ -8,6 +8,8 @@ function sparks(canvas){
   var y = maxY / 2;
   let context = canvas.getContext('2d');
 
+  draw();
+
   canvas.onmousemove = function mouseCoords(event){
     var canvasPosition = getPosition(canvas);
     x = event.clientX - canvasPosition.x;
@@ -59,6 +61,7 @@ function sparks(canvas){
       context.fillStyle = "#ffffff" ;
       context.fill();
       context.closePath();
+
+      window.requestAnimationFrame(draw);
   }
-  setInterval(draw, 10);
 }
