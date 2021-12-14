@@ -3,11 +3,17 @@
 <head>
 <title>My Brain</title>
 <link rel="stylesheet" href="../styles.css">
-<!-- async downloads and exicutes script as soon as it can -->
+<!-- async downloads and executes script as soon as it can -->
 <!-- defer lads the page first and then executes -->
-<script src="../Scripts/expandCanvas.js" defer></script>
+<script src="../Scripts/Useful_Scripts/expandCanvas.js" defer></script>
 <script src="../Scripts/Project_1/simpleBallBounce.js" defer></script>
-<script src="../Scripts/Project_1/sparks.js" async></script>
+<script type="module" defer>
+    import {sparks} from "../Scripts/Project_1/sparks.js"
+    window.addEventListener('load', (event) => {
+        bounceBall(canvas0);
+        sparks(canvas2);
+    });
+</script>
 </head>
 
 <body> 
@@ -50,15 +56,6 @@
             the given position of the mouse was relevant to the page and not the canvas I was drawing on, so I needed a bit of help from the internet 
             to figure how to solve that.
         </p>
-        <div class="demo">
-            <canvas class="canvas-small" id="canvas3" width="600" height="400"></canvas>
-        </div>
     </div>
-    <script defer>
-        window.addEventListener('load', (event) => {
-            bounceBall(canvas0);
-            sparks(canvas2);
-        });
-    </script>
 </body>
 </html> 
