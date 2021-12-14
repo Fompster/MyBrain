@@ -1,22 +1,20 @@
 // Used in the first project page
+
 function bounceBall(canvas){
     const radius = 23;
     const motionTrailLength = 30;
-    var maxX, maxY, xPos, yPos;
+    let maxX = canvas.width;
+    let maxY = canvas.height;
+    var xPos = maxX / 2;
+    var yPos = maxY / 2;
     var context = canvas.getContext('2d');
     let positions = [];
-    var dx = 2;
-    var dy = 2;
+    var dx = 3;
+    var dy = 3;
     var ratio;
 
-    function init() {
-        maxX = canvas.width;
-        maxY = canvas.height;
-        xPos = maxX / 2;
-        yPos = maxY / 2;
-        setInterval(draw, 10);
-    }
-    
+    draw();
+  
     function draw() {
         context.clearRect(0,0, maxX, maxY);
         context.lineWidth = 3;
@@ -43,6 +41,7 @@ function bounceBall(canvas){
         context.stroke();
     
         storePosition();
+        window.requestAnimationFrame(draw);
     }
 
     function storePosition() {
@@ -56,5 +55,4 @@ function bounceBall(canvas){
             positions.shift();
         }
     }
-    init();
 }
