@@ -5,8 +5,10 @@
 <link rel="stylesheet" href="../styles.css">
 <!-- async downloads and executes script as soon as it can -->
 <!-- defer lads the page first and then executes -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- allows me to use jQuery-->
 <script src="../Scripts/Useful_Scripts/expandCanvas.js" defer></script>
 <script src="../Scripts/Project_1/simpleBallBounce.js" defer></script>
+<script src="../Scripts/Useful_Scripts/navBar.js" defer></script>
 <script type="module" defer>
     import {sparks} from "../Scripts/Project_1/sparks.js"
     window.addEventListener('load', (event) => {
@@ -17,6 +19,13 @@
 </head>
 
 <body> 
+    <nav>
+        <li class="active" href="#header-home" onclick="document.location='../index.html'"> Home</li>
+        <li href="#about">About Me</li>
+        <li href="#projects">Projects</li> 
+        <div class="navBarBackground"></div>  
+    </nav>
+
     <div class="header" id="header-p1">
         <h5>Using Canvases</h5>
         <canvas class="expanded-canvas" id="canvas0"></canvas>      
