@@ -12,7 +12,7 @@
 <script type="module" defer>
     import {sparks} from "../Scripts/Project_1/sparks.js"
     window.addEventListener('load', (event) => {
-        bounceBall(canvas0);
+        // bouncingBalls.push(new bounceBall(canvas0));
         sparks(canvas2);
     });
 </script>
@@ -28,7 +28,7 @@
 
     <div class="header" id="header-p1">
         <h5>Using Canvases</h5>
-        <canvas class="expanded-canvas" id="canvas0"></canvas>      
+        <canvas class="expanded-canvas" id="bounceBalls"></canvas>      
     </div>
     <div class="site-wrapper">
         <h1>Getting Started</h1>
@@ -38,10 +38,10 @@
              a very long time now. Bouncing balls!
         </p>
         
-        <div class="demo" onload="bounceBall(canvas1);">
-            <canvas class="canvas-small" id="canvas1" width="600" height="400"></canvas>
+        <div class="demo">
+            <canvas class="canvas-small" id="bounceBalls" width="600" height="400"></canvas>
             <button type="button"
-                onclick="bounceBall(canvas1);">
+                onclick="bouncingBallCanvases.push(new BounceBall(canvas1));">
                 Click to start the demo
             </button>
         </div>
