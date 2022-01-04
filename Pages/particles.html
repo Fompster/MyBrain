@@ -12,7 +12,7 @@
 <script type="module" defer>
     import {sparks} from "../Scripts/Project_1/sparks.js"
     window.addEventListener('load', (event) => {
-        // bouncingBalls.push(new bounceBall(canvas0));
+        spawnBalls();
         sparks(canvas2);
     });
 </script>
@@ -30,7 +30,7 @@
         <h5>Using Canvases</h5>
         <canvas class="expanded-canvas" id="bounceBalls"></canvas>      
     </div>
-    <div class="site-wrapper">
+    <div class="site-wrapper" id="scroll-to-here">
         <h1>Getting Started</h1>
         <p>
             This is my very first project in which I will document my learning journey on how to use Javascript. From this point I have no prior knowledge
@@ -40,10 +40,6 @@
         
         <div class="demo">
             <canvas class="canvas-small" id="bounceBalls" width="600" height="400"></canvas>
-            <button type="button"
-                onclick="bouncingBallCanvases.push(new BounceBall(canvas1));">
-                Click to start the demo
-            </button>
         </div>
         <p>This was relitively easy to implement. Like many things there were multiple ways to make this trail. The way it's implemented now is that I save the 
             previous positions of the ball and draw them for each frame using a ratio to mentain the size and opacity. A different way is to clear the canvas 

@@ -1,6 +1,23 @@
 // Used in the first project page
-let bouncingBallCanvases = [];
-var ballCanvases = $("[id='bounceBalls']");
+
+function spawnBalls() {
+    let bouncingBalls = [];
+    var ballCanvases = $("[id='bounceBalls']");
+
+    for (var i = 0; i<ballCanvases.length; i++) {
+        bouncingBalls.push(new BounceBall(ballCanvases[i]));
+        console.log(ballCanvases[i].getContext)
+    }
+    
+    function draw(){
+        for (var i = 0; i < bouncingBalls.length; i++) {
+            bouncingBalls[i].update();
+            bouncingBalls[i].storePosition();
+        }
+        window.requestAnimationFrame(draw);
+    }
+    draw();
+}
 
 class BounceBall {
     constructor(canvas) {
@@ -13,8 +30,8 @@ class BounceBall {
         this.x = this.maxX / 2;
         this.y = this.maxY / 2;
         this.context = this.canvas.getContext('2d');
-        this.dx = 3;
-        this.dy = 3;
+        this.dx = (Math.random() + 1)*2;
+        this.dy = (Math.random() + 1)*2;
         this.ratio;
     }
 
@@ -44,38 +61,14 @@ class BounceBall {
         this.context.arc(this.x, this.y, 20, 0, 2 * Math.PI, false);
         this.context.closePath();
         this.context.stroke();
-
-        // storePosition();
-        // window.requestAnimationFrame(draw);
     }
 
     storePosition() {
-        // var v = createVector(this.x, this.y);
         // Add positions for the trail
-        this.positions.push({
-            x: this.x,
-            y: this.y
-        });
+        this.positions.push({x: this.x,y: this.y});
         //get rid of first item
         if (this.positions.length > this.motionTrailLength) {
             this.positions.shift();
         }
     }
-    
 }
-
-function draw(){
-    // this.context.clearRect(0, 0, maxX, maxY);
-    for (var i = 0; i < bouncingBallCanvases.length; i++) {
-        // bouncingBallCanvases[i].getContext('2d').clearRect(0, 0, maxX, maxY);
-        bouncingBallCanvases[i].update();
-        bouncingBallCanvases[i].storePosition();
-    }
-    window.requestAnimationFrame(draw);
-}
-
-for (var i = 0; i<ballCanvases.length; i++) {
-    bouncingBallCanvases.push(new BounceBall(ballCanvases[i]));
-    console.log(ballCanvases[i].getContext)
-}
-draw();

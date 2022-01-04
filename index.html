@@ -10,32 +10,34 @@
 <body>
     <nav>
         <li class="active" href="#header-home"> Home</li>
-        <li href="#about">About Me</li>
-        <li href="#projects">Projects</li> 
+        <!-- <li href="#about">About Me</li> -->
+        <!-- <li href="#scroll-to-here">Projects</li>  -->
         <div class="navBarBackground"></div>  
     </nav>
 
     <div class="header" id="header-home">
         <br> 
         <h5>Hi, I'm Tanja de Winter</h5>
+        <div class="scroll-past-header"><a class="arrow" href="#scroll-to-here"></a></div>
     </div>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" id="scroll-to-here">
         <div id="projects">
             <p>My goal is to constantly work on some type of project so that one day I would be able to do MAGIC with it.</p>
             <h1>Projects</h1>
             <p>Here is where I will showcase all of my projects. Unfortunately I dont have much yet :(</p>
-            <button onclick="document.location='Pages/particles.html'">
-                Click to see the project
-            </button>  
         </div>
-        
-        <br>  <br>   <br>   <br>  <br>   <br>   <br>  <br>   <br>   <br>  
-        <br>  <br>   <br>   <br>  <br>   <br>   <br>  
-        <br>  <br>   <br>   <br>  <br>   <br>   <br>  
-        <br>  <br>   <br>   <br>  <br>   <br>   <br>  
-        <br>   <br>   <br>   <br>  <br>   <br>   <br>  
     </div>
 
+    <div class="showcase">
+        <div class="project-card" onclick="document.location='Pages/particles.html'" style="background-image:url(./Images/Index/Project1.png)">
+            <div class="date">Dec 2021</div><p>Learning JS</p></div>
+        <!-- <div class="project-card"></div>
+        <div class="project-card"></div>
+        <div class="project-card"></div>
+        <div class="project-card"></div>
+        <div class="project-card"></div> -->
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html> 
