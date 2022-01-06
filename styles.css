@@ -145,7 +145,7 @@ h5 {
     display: flex;
     row-gap: 40px;
     column-gap: 20px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -160,11 +160,21 @@ h5 {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-    /* background-image: url(./Images/Index/Project1.png); */
-    /* border: 5px solid var(--border_color); */
+    font-family: sans-serif;
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-left: 25px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    /* on hover off */
+    transform: scale(1);
+    transition: all, 300ms;
+    transition-timing-function: ease-in-out;
 }
 
-.showcase .project-card .date {
+.project-card .date {
     position: absolute;
     top: 0;
     right: 0;
@@ -174,7 +184,22 @@ h5 {
     opacity: .8;
   }
 
+.project-card .title {
+    position: absolute;
+    padding: inherit;
+    font-size: 30px;
+    bottom: 0px;
+    left: 0px;
+  }
+
+.project-card .description {
+    font-size: 18px;
+    line-height: 1.2em;
+    opacity: 0;
+  }
+
 .project-card:before, .project-card:after {
+    background: var(--soft-black);
     content: '';
     transform: scale(0);
     transform-origin: top left;
@@ -183,29 +208,38 @@ h5 {
     left: -50%;
     top: -50%;
     z-index: -5;
-    transition: all, 1s;
+    transition: all, 500ms;
     transition-timing-function: ease-in-out;
   }
 
 .project-card:before {
-    /* background: #ddd; */
+    opacity: 0.6;
     width: 250%;
     height: 250%;
   }
 
 .project-card:after {
-    background: grey;
     width: 200%;
-    height: 200%;
+    height: 125%;
   }
 
 .project-card:hover:before, .project-card:hover:after {
     transform: scale(1);
+    transition: all, 1s;
+    transition-timing-function: ease-in-out;
   }
 
-.showcase .project-card:hover {
+.showcase .project-card:hover{
     cursor: pointer;
+    transition-timing-function: ease-in-out;
     transform: scale(1.05);
+    transition: all, 0.8s;
+}
+.showcase .project-card:hover > .description{
+    opacity: 1;
+    transition: all, 1s;
+    transition-delay: 500ms;
+    transition-timing-function: ease-in-out;
 }
 
 .arrow {
